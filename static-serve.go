@@ -87,7 +87,7 @@ func NewStaticServer(
 	var workDir = filepath.Dir(execPath)
 
 	if !strings.HasPrefix(siteRoot, workDir) {
-		return nil, fmt.Errorf("Unable to find site root in executable directory")
+		return nil, fmt.Errorf("Unable to find site root in executable directory\nsite root: %q\nwork dir: %q", siteRoot, workDir)
 	}
 
 	return &StaticServe{
