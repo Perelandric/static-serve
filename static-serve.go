@@ -497,49 +497,48 @@ SEND_FILE:
 
 	buf[0] = '"'
 
-	// Syntax to be used in Go 1.17
-	//
-	//writeHexPair((*[2]byte)(buf[1:3]), sum[0])
-	//writeHexPair((*[2]byte)(buf[3:5]), sum[1])
-	//writeHexPair((*[2]byte)(buf[5:7]), sum[2])
-	//writeHexPair((*[2]byte)(buf[7:9]), sum[3])
-	//writeHexPair((*[2]byte)(buf[9:11]), sum[4])
-	//writeHexPair((*[2]byte)(buf[11:13]), sum[5])
-	//writeHexPair((*[2]byte)(buf[13:15]), sum[6])
-	//writeHexPair((*[2]byte)(buf[15:17]), sum[7])
-	//writeHexPair((*[2]byte)(buf[17:19]), sum[8])
-	//writeHexPair((*[2]byte)(buf[19:21]), sum[9])
-	//writeHexPair((*[2]byte)(buf[21:23]), sum[10])
-	//writeHexPair((*[2]byte)(buf[23:25]), sum[11])
-	//writeHexPair((*[2]byte)(buf[25:27]), sum[12])
-	//writeHexPair((*[2]byte)(buf[27:29]), sum[13])
-	//writeHexPair((*[2]byte)(buf[29:31]), sum[14])
-	//writeHexPair((*[2]byte)(buf[31:33]), sum[15])
-	//writeHexPair((*[2]byte)(buf[33:35]), sum[16])
-	//writeHexPair((*[2]byte)(buf[35:37]), sum[17])
-	//writeHexPair((*[2]byte)(buf[37:39]), sum[18])
-	//writeHexPair((*[2]byte)(buf[39:41]), sum[19])
 
-	buf[1], buf[2] = hex[sum[0]>>4], hex[sum[0]&0xF]
-	buf[3], buf[4] = hex[sum[1]>>4], hex[sum[1]&0xF]
-	buf[5], buf[6] = hex[sum[2]>>4], hex[sum[2]&0xF]
-	buf[7], buf[8] = hex[sum[3]>>4], hex[sum[3]&0xF]
-	buf[9], buf[10] = hex[sum[4]>>4], hex[sum[4]&0xF]
-	buf[11], buf[12] = hex[sum[5]>>4], hex[sum[5]&0xF]
-	buf[13], buf[14] = hex[sum[6]>>4], hex[sum[6]&0xF]
-	buf[15], buf[16] = hex[sum[7]>>4], hex[sum[7]&0xF]
-	buf[17], buf[18] = hex[sum[8]>>4], hex[sum[8]&0xF]
-	buf[19], buf[20] = hex[sum[9]>>4], hex[sum[9]&0xF]
-	buf[21], buf[22] = hex[sum[10]>>4], hex[sum[10]&0xF]
-	buf[23], buf[24] = hex[sum[11]>>4], hex[sum[11]&0xF]
-	buf[25], buf[26] = hex[sum[12]>>4], hex[sum[12]&0xF]
-	buf[27], buf[28] = hex[sum[13]>>4], hex[sum[13]&0xF]
-	buf[29], buf[30] = hex[sum[14]>>4], hex[sum[14]&0xF]
-	buf[31], buf[32] = hex[sum[15]>>4], hex[sum[15]&0xF]
-	buf[33], buf[34] = hex[sum[16]>>4], hex[sum[16]&0xF]
-	buf[35], buf[36] = hex[sum[17]>>4], hex[sum[17]&0xF]
-	buf[37], buf[38] = hex[sum[18]>>4], hex[sum[18]&0xF]
-	buf[39], buf[40] = hex[sum[19]>>4], hex[sum[19]&0xF]
+	writeHexPair((*[2]byte)(buf[1:]), sum[0])
+	writeHexPair((*[2]byte)(buf[3:]), sum[1])
+	writeHexPair((*[2]byte)(buf[5:]), sum[2])
+	writeHexPair((*[2]byte)(buf[7:]), sum[3])
+	writeHexPair((*[2]byte)(buf[9:]), sum[4])
+	writeHexPair((*[2]byte)(buf[11:]), sum[5])
+	writeHexPair((*[2]byte)(buf[13:]), sum[6])
+	writeHexPair((*[2]byte)(buf[15:]), sum[7])
+	writeHexPair((*[2]byte)(buf[17:]), sum[8])
+	writeHexPair((*[2]byte)(buf[19:]), sum[9])
+	writeHexPair((*[2]byte)(buf[21:]), sum[10])
+	writeHexPair((*[2]byte)(buf[23:]), sum[11])
+	writeHexPair((*[2]byte)(buf[25:]), sum[12])
+	writeHexPair((*[2]byte)(buf[27:]), sum[13])
+	writeHexPair((*[2]byte)(buf[29:]), sum[14])
+	writeHexPair((*[2]byte)(buf[31:]), sum[15])
+	writeHexPair((*[2]byte)(buf[33:]), sum[16])
+	writeHexPair((*[2]byte)(buf[35:]), sum[17])
+	writeHexPair((*[2]byte)(buf[37:]), sum[18])
+	writeHexPair((*[2]byte)(buf[39:]), sum[19])
+
+	// buf[1], buf[2] = hex[sum[0]>>4], hex[sum[0]&0xF]
+	// buf[3], buf[4] = hex[sum[1]>>4], hex[sum[1]&0xF]
+	// buf[5], buf[6] = hex[sum[2]>>4], hex[sum[2]&0xF]
+	// buf[7], buf[8] = hex[sum[3]>>4], hex[sum[3]&0xF]
+	// buf[9], buf[10] = hex[sum[4]>>4], hex[sum[4]&0xF]
+	// buf[11], buf[12] = hex[sum[5]>>4], hex[sum[5]&0xF]
+	// buf[13], buf[14] = hex[sum[6]>>4], hex[sum[6]&0xF]
+	// buf[15], buf[16] = hex[sum[7]>>4], hex[sum[7]&0xF]
+	// buf[17], buf[18] = hex[sum[8]>>4], hex[sum[8]&0xF]
+	// buf[19], buf[20] = hex[sum[9]>>4], hex[sum[9]&0xF]
+	// buf[21], buf[22] = hex[sum[10]>>4], hex[sum[10]&0xF]
+	// buf[23], buf[24] = hex[sum[11]>>4], hex[sum[11]&0xF]
+	// buf[25], buf[26] = hex[sum[12]>>4], hex[sum[12]&0xF]
+	// buf[27], buf[28] = hex[sum[13]>>4], hex[sum[13]&0xF]
+	// buf[29], buf[30] = hex[sum[14]>>4], hex[sum[14]&0xF]
+	// buf[31], buf[32] = hex[sum[15]>>4], hex[sum[15]&0xF]
+	// buf[33], buf[34] = hex[sum[16]>>4], hex[sum[16]&0xF]
+	// buf[35], buf[36] = hex[sum[17]>>4], hex[sum[17]&0xF]
+	// buf[37], buf[38] = hex[sum[18]>>4], hex[sum[18]&0xF]
+	// buf[39], buf[40] = hex[sum[19]>>4], hex[sum[19]&0xF]
 
 	mod := stat.ModTime()
 
@@ -605,8 +604,8 @@ func toHex(b byte) byte {
 	return hex[b]
 }
 
-//func writeHexPair(buf [2]byte, b byte) {
-func writeHexPair(buf []byte, b byte) {
+func writeHexPair(buf *[2]byte, b byte) {
+//func writeHexPair(buf []byte, b byte) {
 	buf[0], buf[1] = hex[b>>4], hex[b&0xF]
 }
 
